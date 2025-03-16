@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: product-service
+  config:
+    import: optional:configserver:http://localhost:8888
+  defer-datasource-initialization: true
+
+  main:
+    allow-bean-definition-overriding: true
+
+# management:
+#   security:
+#     enabled: false

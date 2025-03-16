@@ -1,0 +1,38 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: gateway-service
+  
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://127.0.0.1:5173,http://127.0.0.1:3001"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
+  main:
+    allow-bean-definition-overriding: true
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+
+
+server:
+  port: 8222
+
+
+# management:
+#   security:
+#     enabled: false
