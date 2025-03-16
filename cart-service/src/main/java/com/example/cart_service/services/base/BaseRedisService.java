@@ -60,4 +60,12 @@ public interface BaseRedisService {
      * @return
      */
     Map<String, Object> getField(String key);
+
+    /**
+     * delete value from redis by key and field
+     *
+     * @param key
+     * @param field
+     */
+    void delete(String key, String field);
 }
