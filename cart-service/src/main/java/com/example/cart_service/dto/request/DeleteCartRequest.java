@@ -1,10 +1,11 @@
 package com.example.cart_service.dto.request;
 
+import java.util.List;
+
 import lombok.Getter;
 
 @Getter
-public class CartItemRequest {
+public class DeleteCartRequest {
     private String userId;
-    private short quantity;
-    private int productId;
+    private List<Integer> listProductId;
 }

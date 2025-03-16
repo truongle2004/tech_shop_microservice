@@ -48,4 +48,9 @@ public class BaseRedisServiceImpl implements BaseRedisService {
     public Map<String, Object> getField(String key) {
         return hashOperations.entries(key);
     }
+
+    @Override
+    public void delete(String key, String field) {
+        this.hashOperations.delete(key, field);
+    }
 }
